@@ -1,0 +1,197 @@
+<!--Copyright (c) 2020 by Dhanush Badge (https://codepen.io/dhanushbadge/pen/olsvi)-->
+
+<!--Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:-->
+
+<!--The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.-->
+
+<!--THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Syncopate:700);
+
+
+
+        body {
+            text-align: center;
+            background: #ECF0F1;
+        }
+
+        svg {
+            margin-top: 10vh;
+            text-transform: uppercase;
+            font-family: "Syncopate";
+            cursor:pointer;
+            transition: all 1.2s ease-in-out;
+        }
+
+        svg:hover .dev {
+            opacity: 1;
+            transition: opacity 0.3s ease-in;
+        }
+
+        svg:hover .line1 {
+            transform: translateY(0px);
+            -webkit-transform: translateY(0px);
+            -moz-transform: translateY(0px);
+        }
+
+        .dev {
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+            -webkit-transition: opacity 0.3s ease-out;
+            -moz-transition: opacity 0.3s ease-out;
+        }
+
+        line {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: dash 5s linear forwards;
+            -webkit-animation: dash 5s linear forwards;
+            -moz-animation: dash 5s linear forwards;
+        }
+
+        .line1 {
+            transform: translateY(30px);
+            -webkit-transform: translateY(30px);
+            -moz-transform: translateY(30px);
+            transition: all 0.5s ease-in-out;
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-moz-keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        @-webkit-keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        .dropdownmenu ul, .dropdownmenu li {
+            margin: 0;
+            padding: 0;
+        }
+        .dropdownmenu ul {
+            background: gray;
+            list-style: none;
+            width: 100%;
+        }
+        .dropdownmenu li {
+            float: left;
+            position: relative;
+            width:auto;
+        }
+        .dropdownmenu a {
+            background: #44d642;
+            color: #FFFFFF;
+            display: block;
+            font: bold 12px/20px sans-serif;
+            padding: 25px 100px;
+            text-align: center;
+            text-decoration: none;
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+            -ms-transition: all .25s ease;
+            -o-transition: all .25s ease;
+            transition: all .25s ease;
+        }
+        .dropdownmenu li:hover a {
+            background: #000000;
+        }
+        #submenu {
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 35px;
+            visibility: hidden;
+            z-index: 1;
+        }
+        li:hover ul#submenu {
+            opacity: 1;
+            top: 70px;	/* 리스트항목과 서브첫번째 사이 */
+            visibility: visible;
+
+        }
+        #submenu li {
+            float: none;
+            width: 100%;
+        }
+        #submenu a:hover {
+            background: #e13605;
+        }
+        #submenu a {
+            background-color: #000000;
+
+        }
+                html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bg-img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: url('http://unsplash.it/1200x800') center center no-repeat;
+            background-size: cover;
+        }
+        bg-img:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+            opacity: .6;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>객관적</title>
+</head>
+<body>
+<svg height="200" width="300" viewBox="0 0 300 200">
+    <text>
+        <tspan x="30" dy="34px" y="0" font-size="24" fill="#000000" class="dev">
+            WEB PROJECT
+        </tspan>
+        <tspan x="0" dy="80px" y="34" font-weight="bold" font-size="80" fill="#0CE909">
+            객 관 적
+        </tspan>
+        <tspan x="20" dy="35px" y="120" font-size="35" fill="#E13605">
+            OBJECTIVE
+        </tspan>
+    </text>
+    <line x1="0" y1="2" x2="282" y2="2"
+          style="stroke:#3498DB; stroke-width:3;" class="line1" />
+    <line transform="translate(282, 0) scale(-1, 1)" x1="0" y1="85%" x2="282" y2="85%"
+          style="stroke:#3498DB; stroke-width:3;" class="line2" />
+</svg>
+<nav class="dropdownmenu" >
+    <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="index2.html">머리</a></li>
+        <li><a href="#">얼굴</a>
+            <ul id="submenu">
+                <li><a href="index2.html">공룡상 테스트</a></li>
+                <li><a href="index2.html">동물상 테스트</a></li>
+                <li><a href="index2.html">테스트 개발중</a></li>
+            </ul>
+        </li>
+        <li><a href="index2.html">통계</a></li>
+        <li><a href="index2.html">others</a></li>
+    </ul>
+</nav>
+</body>
+</html>

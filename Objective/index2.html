@@ -1,0 +1,115 @@
+<!--Copyright (c) 2020 by Dhanush Badge (https://codepen.io/dhanushbadge/pen/olsvi)-->
+
+<!--Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:-->
+
+<!--The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.-->
+
+<!--THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    html, body {
+  width: 100%;
+  height: 100%;
+}
+
+.bg-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: url('http://unsplash.it/1200x800') center center no-repeat;
+    background-size: cover;
+}
+  bg-img:before {
+    content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+	opacity: .6;
+  }
+
+    .dropdownmenu ul, .dropdownmenu li {
+	margin: 0;
+	padding: 0;
+}
+.dropdownmenu ul {
+	background: gray;
+	list-style: none;
+	width: 100%;
+}
+.dropdownmenu li {
+	float: left;
+	position: relative;
+	width:auto;
+}
+.dropdownmenu a {
+	background: #35e932;
+	color: #FFFFFF;
+	display: block;
+	font: bold 12px/20px sans-serif;
+	padding: 25px 100px;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition: all .25s ease;
+	-moz-transition: all .25s ease;
+	-ms-transition: all .25s ease;
+	-o-transition: all .25s ease;
+	transition: all .25s ease;
+}
+.dropdownmenu li:hover a {
+	background: #000000;
+}
+#submenu {
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 35px;
+	visibility: hidden;
+	z-index: 1;
+}
+li:hover ul#submenu {
+	opacity: 1;
+	top: 70px;	/* 리스트항목과 서브첫번째 사이 */
+	visibility: visible;
+
+}
+#submenu li {
+	float: none;
+	width: 100%;
+}
+#submenu a:hover {
+	background: #e6c209;
+}
+#submenu a {
+	background-color: #000000;
+
+}
+</style>
+    <meta charset="UTF-8">
+    <title>객관적</title>
+</head>
+<body>
+<nav class="dropdownmenu" >
+    <ul>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="index2.html">머리</a></li>
+        <li><a href="#">얼굴</a>
+            <ul id="submenu">
+                <li><a href="index2.html">공룡상 테스트</a></li>
+                <li><a href="index2.html">동물상 테스트</a></li>
+                <li><a href="index2.html">테스트 개발중</a></li>
+            </ul>
+        </li>
+        <li><a href="index2.html">통계</a></li>
+        <li><a href="index2.html">others</a></li>
+        <div class="bg-img"></div>
+    </ul>
+</nav>
+</body>
+</html>
