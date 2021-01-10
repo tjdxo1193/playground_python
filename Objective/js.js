@@ -1,12 +1,8 @@
 var AnimateLogo = function() {
-  var
-    tl,
-    logo,
-    letters,
-    button,
-    bg;
+  var tl, logo, letters, button, bg;
+}
 
-  var _init = function() {
+var _init = function() {
     logo    = document.getElementById('logo');
     button  = document.getElementById('restart');
     bg      = document.getElementById('bg');
@@ -15,11 +11,11 @@ var AnimateLogo = function() {
     letters = letters.reverse();
     _addEventHandlers();
     _animate();
-  }
+}
 
   var _addEventHandlers = function() {
     button.addEventListener('click', _play, false);
-  }
+}
 
   var _animate = function () {
     tl = new TimelineLite();
@@ -31,16 +27,13 @@ var AnimateLogo = function() {
   }
 
   var _play = function() {
-    if(tl.progress() < 1) {
+    if (tl.progress() < 1) {
       tl.play();
     } else {
       tl.restart();
     }
+    return {
+      init: _init
+    }();
   }
-
-  return {
-    init: _init
-  }
-}();
-
 AnimateLogo.init();
